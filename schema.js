@@ -16,6 +16,7 @@ export const typeDefs = /* GraphQL */ `
     books: [Book!]!
     book(id: ID!): Book
     authors: [Author!]!
+    author(id: ID!): Author
   }
 
   type Mutation {

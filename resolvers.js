@@ -5,6 +5,7 @@ export const resolvers = {
     books: () => books,
     book: (_parent, { id }) => books.find((b) => b.id === id),
     authors: () => authors,
+    author: (_parent, { id }) => authors.find((b) => b.id === id),
   },
   Mutation: {
     addBook: (_parent, { title, year, authorId }) => {
