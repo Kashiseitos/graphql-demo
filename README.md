@@ -4,14 +4,21 @@ Proyecto listo para live coding de una demo de GraphQL (15-20 min).
 
 ## Requisitos
 
-- Node.js 18 o superior (verifica con `node -v`)
+- Node.js 18 o superior instalado de antemano (verifica con `node -v`)
+- El resto (clonar el repo e instalar dependencias) se hace **en vivo, durante la demo**.
 
-## Cómo correrlo
+## Cómo correrlo (en vivo, frente al grupo)
 
 ```bash
+git clone <URL-del-repo>
+cd graphql-demo
 npm install
 npm start
 ```
+
+`npm install` tarda solo unos segundos (son 2 dependencias). Aprovecha
+ese momento para explicar qué son `graphql-yoga` y `graphql` mientras
+corre, así no se siente como tiempo muerto.
 
 Abre en el navegador: **http://localhost:4000/graphql**
 (Yoga trae un playground integrado, no necesitas instalar nada extra).
