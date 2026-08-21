@@ -1,38 +1,30 @@
-# Demo GraphQL — Biblioteca
-
-Proyecto listo para live coding de una demo de GraphQL (15-20 min).
+# Demo GraphQL — Biblioteca de libros y autores
 
 ## Requisitos
 
 - Node.js 18 o superior instalado de antemano (verifica con `node -v`)
-- El resto (clonar el repo e instalar dependencias) se hace **en vivo, durante la demo**.
 
-## Cómo correrlo (en vivo, frente al grupo)
+## Cómo correrlo
 
 ```bash
-git clone <URL-del-repo>
+git clone https://github.com/Kashiseitos/graphql-demo.git
 cd graphql-demo
-npm install
+npm install graphql graphql-yoga
 npm start
 ```
 
-`npm install` tarda solo unos segundos (son 2 dependencias). Aprovecha
-ese momento para explicar qué son `graphql-yoga` y `graphql` mientras
-corre, así no se siente como tiempo muerto.
-
 Abre en el navegador: **http://localhost:4000/graphql**
-(Yoga trae un playground integrado, no necesitas instalar nada extra).
 
 ## Estructura
 
 - `schema.js` — define los tipos (`Book`, `Author`) y qué se puede preguntar (`Query`) o cambiar (`Mutation`).
-- `data.js` — datos de ejemplo en memoria (simula una base de datos).
+- `data.js` — datos de ejemplo (simula una base de datos).
 - `resolvers.js` — funciones que conectan el schema con los datos.
 - `server.js` — levanta el servidor.
 
-## Queries para mostrar en vivo (copia y pega en el playground)
+## Queries para mostrar en vivo
 
-### 1. Pedir solo lo que necesitas (el "aha" de GraphQL)
+### 1. Pedir solo lo que necesitas
 
 ```graphql
 {
@@ -61,21 +53,51 @@ Luego agrega más campos sin tocar el backend:
 ```graphql
 {
   book(id: "1") {
+    id
     title
     author {
       name
-      books {
-        title
-      }
     }
   }
 }
 ```
 
-Este ejemplo es bueno para mostrar cómo se navegan relaciones anidadas
-(libro → autor → todos sus libros) en una sola petición.
+### 3. Pedir todos los autores
 
-### 3. Mutation: agregar un libro en vivo
+```graphql
+{
+  authors {
+    id
+    name
+  }
+}
+```
+
+Ver todos los libros de todos los autores
+
+```graphql
+{
+  authors {
+    id
+    name
+    books {
+      title
+      year
+    }
+  }
+}
+```
+
+### 4. Mutation: agregar datos
+
+```graphql
+{
+  books {
+    title
+    year
+  }
+}
+```
 
 ```graphql
 mutation {
@@ -89,10 +111,16 @@ mutation {
 }
 ```
 
-Después vuelve a correr la query de `books` para que vean el libro nuevo
-reflejado al instante.
+```graphql
+{
+  books {
+    title
+    year
+  }
+}
+```
 
-## Para el cierre (comparación con REST)
+## Comparación con REST
 
 Con REST, lo anterior hubiera necesitado varios endpoints:
 - `GET /books`
