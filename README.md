@@ -22,7 +22,7 @@ Abre en el navegador: **http://localhost:4000/graphql**
 - `resolvers.js` — funciones que conectan el schema con los datos.
 - `server.js` — levanta el servidor.
 
-## Queries para mostrar en vivo
+## Queries
 
 ### 1. Pedir solo lo que necesitas
 
