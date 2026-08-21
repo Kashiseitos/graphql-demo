@@ -1,4 +1,4 @@
-export const typeDefs = /* GraphQL */ `
+export const typeDefs = `
   type Author {
     id: ID!
     name: String!

@@ -18,7 +18,7 @@ export const resolvers = {
       return newBook;
     },
   },
-  // Estos resolvers "conectan" un tipo con el otro (relaciones)
+  // Relaciones entre libros y autores
   Book: {
     author: (book) => authors.find((a) => a.id === book.authorId),
   },
