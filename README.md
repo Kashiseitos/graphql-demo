@@ -103,3 +103,7 @@ Con REST, lo anterior hubiera necesitado varios endpoints:
 
 Con GraphQL, todo pasa por **un solo endpoint** (`/graphql`), y el cliente
 decide exactamente qué campos necesita en cada petición.
+
+
+
+skibidisigmapomni
