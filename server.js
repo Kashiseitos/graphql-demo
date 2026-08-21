@@ -10,5 +10,5 @@ const yoga = createYoga({
 const server = createServer(yoga);
 
 server.listen(4000, () => {
-  console.log("🚀 Servidor GraphQL corriendo en http://localhost:4000/graphql");
+  console.log("Servidor GraphQL corriendo en http://localhost:4000/graphql");
 });

@@ -1,4 +1,5 @@
-// "Base de datos" en memoria, solo para la demo.
+// Simula la base de datos
+
 export const authors = [
   { id: "1", name: "Gabriel García Márquez" },
   { id: "2", name: "Isabel Allende" },
