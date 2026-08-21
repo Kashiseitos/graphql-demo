@@ -1,0 +1,14 @@
+import { createServer } from "node:http";
+import { createYoga, createSchema } from "graphql-yoga";
+import { typeDefs } from "./schema.js";
+import { resolvers } from "./resolvers.js";
+
+const yoga = createYoga({
+  schema: createSchema({ typeDefs, resolvers }),
+});
+
+const server = createServer(yoga);
+
+server.listen(4000, () => {
+  console.log("🚀 Servidor GraphQL corriendo en http://localhost:4000/graphql");
+});
