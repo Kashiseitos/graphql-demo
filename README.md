@@ -62,6 +62,17 @@ Luego agrega más campos sin tocar el backend:
 }
 ```
 
+Añadir definiciones para hacer el query de Autor por id en `schema.js` y `resolvers.js`.
+
+```graphql
+{
+  author(id: "1") {
+    id
+    name
+  }
+}
+```
+
 ### 3. Pedir todos los autores
 
 ```graphql
